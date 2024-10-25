@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0; 
+        }
+        h1 {
+            margin-bottom: 20px; 
+        }
+        .container {
+            display: flex;
+            border: 2px solid #333;
+            padding: 20px; 
+        }
+        .color {
+            display: inline-block;
+            width: 100px; 
+            height: 100px; 
+            margin: 0 5px; 
+            cursor: pointer;
+            border: 2px solid #fff;
+            transition: transform 0.2s; 
+        }
+        .color:hover {
+            transform: scale(1.1); 
+        }
+        .c1r1 {
+            background-color: #9b0fdb;
+        }
+        .c1r2 {
+            background-color: #ffea00;
+        }
+        .c1r3 {
+            background-color: #04db53;
+        }
+        .c1r4 {
+            background-color: #0f68db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <div class="container">
+        <span id='1' onclick="color(this)" class='color c1r1'></span>
+        <span id='2' onclick="color(this)" class='color c1r2'></span>
+        <span onclick="color(this)" class='color c1r3'></span>
+        <span onclick="color(this)" class='color c1r4'></span>
+    </div>
+
+    <script>
+        function color(element) {
+            var computedStyle = getComputedStyle(element); 
+            var backgroundColor = computedStyle.backgroundColor; 
+            document.body.style.backgroundColor = backgroundColor; 
+        }
+    </script>
+</body>
+</html>
